@@ -1,0 +1,30 @@
+/* Creation page selection */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full height to make footer stick to the bottom */
+  }
+  
+  /* Main content area - centers content horizontally and aligns on right */
+  .main-content {
+    flex: 1; /* Grow to fill space between header and footer */
+    display: flex;
+    justify-content: flex-end; /* Aligns items to the right */
+    align-items: center; /* Vertically centers content */
+    padding-right: 20px; /* Adds padding to the right */
+  }
+  
+  /* Styles for the container image */
+  .container-image {
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 20px; /* Optional: adds margin for spacing */
+  }
+  
+  /* Footer styles - fixed to the bottom */
+  .footer {
+    padding: 10px;
+    background-color: #f8f9fa; /* Optional: change background color */
+    text-align: center; /* Center text */
+    border-top: 1px solid #ddd; /* Optional: adds a top border for separation */
+  }
