@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Nav from "./components/Nav";
 import "./App.css";
+import { SelectContainer } from './components/SelectContainer';
+import { DragDropContainer } from "./components/DragDropContainer";
 
 export default function App() {
+  const [selectedContainer, setSelectedContainer] = useState('');
+
   return (
-    <Nav />
+    <div className="app">
+      <Nav />
+    </div>
   );
 }
