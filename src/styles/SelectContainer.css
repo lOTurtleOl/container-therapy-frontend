@@ -4,6 +4,28 @@
     flex-direction: column;
     height: 100vh; /* Full height to make footer stick to the bottom */
   }
+
+  .full-background-white {
+    background-image: url(../images/background-white.webp),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    background-blend-mode: overlay, overlay, normal;
+  }
+
+  .bg-white-2 {
+    background-image: url(../images/white-2.jpeg),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-blend-mode: overlay, overlay, normal;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+  }
   
   /* Main content area - centers content horizontally and aligns on right */
   .main-content {
@@ -26,5 +48,5 @@
     padding: 10px;
     background-color: #f8f9fa; /* Optional: change background color */
     text-align: center; /* Center text */
-    border-top: 1px solid #ddd; /* Optional: adds a top border for separation */
+    border-top: px solid #ddd; /* Optional: adds a top border for separation */
   }

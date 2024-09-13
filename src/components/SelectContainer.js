@@ -4,11 +4,19 @@ import folderImg from '../images/folderImg.png';
 import treeImg from '../images/treeImg.jpg';
 import "../styles/SelectContainer.css";
 
-export const SelectContainer = () => {
-  const [containerType, setContainerType] = useState('');
+// Accept props, including onSelect and initialContainerType
+export const SelectContainer = ({ onSelect, initialContainerType = '' }) => {
+  const [containerType, setContainerType] = useState(initialContainerType);
 
+  // Handle the change event and notify the parent component through onSelect
   function handleChange(event) {
-    setContainerType(event.target.value);
+    const selectedType = event.target.value;
+    setContainerType(selectedType);
+
+    // Call onSelect if it's a function passed from the parent component
+    if (typeof onSelect === 'function') {
+      onSelect(selectedType); // Notify the parent with the selected type
+    }
   }
 
   const containerImages = {
@@ -18,8 +26,8 @@ export const SelectContainer = () => {
   };
 
   return (
-    <div className="app-container">
-      {/* Main content area with the container image */}
+    <div>
+      {/* Main content area with the container image
       <div className="main-content">
         {containerType && (
           <img
@@ -28,7 +36,7 @@ export const SelectContainer = () => {
             className="container-image"
           />
         )}
-      </div>
+      </div> */}
 
       {/* Footer with the dropdown for selecting the container type */}
       <footer className="footer">

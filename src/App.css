@@ -32,6 +32,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -41,6 +42,28 @@
 :root {
   --primary-color: #28a745;
   --background-color: #f7f7f7;
+}
+
+.full-background {
+  background-image: url(./images/therapy-space.jpg);
+  background-size: cover;
+  /* This ensures the image covers the entire element */
+  background-repeat: no-repeat;
+  /* Prevents the image from repeating */
+  background-position: center;
+  /* Centers the image */
+  height: 100vh;
+  /* Ensures the body takes up the full viewport height */
+  margin: 0;
+}
+
+.full-background-white {
+  background-image: url(./images/background-white.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
 }
 
 /* Text Colors */
@@ -152,88 +175,88 @@ section.partnered {
 
 .container-form {
   .container {
-      margin: auto;
-      width: 80%;
-      background-color: #eeeeee;
-      padding: 25px;
-      border-radius: 5px;
-  } 
+    margin: auto;
+    width: 80%;
+    background-color: #eeeeee;
+    padding: 25px;
+    border-radius: 5px;
+  }
 }
 
 @media (min-width: 1399.38px) {
   .container {
-      width: 84%;
+    width: 84%;
   }
 }
 
 @media (max-width: 1199px) {
   .hero-title {
-      font-size: 55px;
-      line-height: 68px;
+    font-size: 55px;
+    line-height: 68px;
   }
 }
 
 @media (max-width: 992px) {
   section.hero .row {
-      align-items: center;
+    align-items: center;
   }
 
   .hero-title {
-      font-size: 40px;
-      line-height: 55px;
+    font-size: 40px;
+    line-height: 55px;
   }
 }
 
 @media (max-width: 768px) {
   .hero-title {
-      font-size: 40px;
-      line-height: 55px;
+    font-size: 40px;
+    line-height: 55px;
   }
 
   section.hero p {
-      font-size: 16px;
+    font-size: 16px;
   }
 
   .btn {
-      padding: 12px 18px;
+    padding: 12px 18px;
   }
 
   .hero-img {
-      margin-top: 2rem;
+    margin-top: 2rem;
   }
 }
 
 @media (max-width: 576px) {
   .navbar {
-      padding: 12px 0;
+    padding: 12px 0;
   }
 
   .navbar-nav {
-      margin-left: 0;
-      padding-bottom: 0.8rem;
+    margin-left: 0;
+    padding-bottom: 0.8rem;
   }
 
   a.nav-link {
-      padding: 0.5rem;
+    padding: 0.5rem;
   }
 
   .hero-title {
-      font-size: 50px;
-      line-height: 60px;
+    font-size: 50px;
+    line-height: 60px;
   }
 
   .cta {
-      margin-top: 35px
+    margin-top: 35px
   }
 
   .hero-img {
-      margin-top: 40px;
+    margin-top: 40px;
   }
 }
 
 @media (max-width: 390px) {
   .hero-title {
-      font-size: 4px;
-      line-height: 55px;
+    font-size: 4px;
+    line-height: 55px;
   }
 }

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import "./App.css"
 
 export default function HomePage() {
   return (
-    <div className="px-4 pt-5 my-5 text-center border-bottom">
+    <div className="px-4 pt-5 text-center full-background">
           <h1 className="display-4 fw-bold">Welcome to Mindful Containers</h1>
           <h4 className="fw-bold">Explore Your Emotions, Manage Your Stress, and Visualize Your Progress</h4>
           <div className="col-lg-6 mx-auto">
@@ -17,9 +18,6 @@ export default function HomePage() {
             </div>
           </div>
           <div className="overflow-hidden" style={{ maxHeight: '30vh' }}>
-            <div className="convtainer px-5">
-              <img src="bootstrap-docs.png" className="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy" />
-            </div>
           </div>
     </div>
   )
