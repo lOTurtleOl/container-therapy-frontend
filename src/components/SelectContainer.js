@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import portalImg from '../images/portalImg.jpeg';
+import portalImg from '../images/portalImg2.jpg';
 import folderImg from '../images/folderImg.png';
 import treeImg from '../images/treeImg.jpg';
 import "../styles/SelectContainer.css";

@@ -14,7 +14,9 @@ export default function HomePage() {
             <Link to="/create">
               <button type="button" className="btn btn-primary btn-lg px-4 me-sm-3">Start here</button>
             </Link>
-              <button type="button" className="btn btn-outline-secondary btn-lg px-4">Container</button>            
+            <Link to="/container">
+              <button type="button" className="btn btn-outline-secondary btn-lg px-4">Container</button>   
+            </Link>         
             </div>
           </div>
           <div className="overflow-hidden" style={{ maxHeight: '30vh' }}>

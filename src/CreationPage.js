@@ -8,9 +8,10 @@ import AddObject from './components/AddObject';
 export default function CreationPage() {
   return (
     <div className="bg-white-2">
-      <AddObject />
+      
 
       <DndProvider backend={HTML5Backend}>
+        <AddObject />
         <DragDropContainer />
       </DndProvider>
     </div>

@@ -1,10 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { DraggableItem } from './DraggableItem';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function AddObject() {
-    const [objectList, setObjectList] = useState([]);
+    const [objectList, setObjectList] = useState(() => {
+        const savedList = localStorage.getItem('objectList');
+        return savedList ? JSON.parse(savedList) : [];
+    });
     const [objectValue, setObjectValue] = useState('');
     const [objectDate, setObjectDate] = useState('');
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.state && location.state.object) {
+            const returnedObject = location.state.object;
+
+            // Check if object is already in the list to avoid duplicates
+            setObjectList((prevList) => {
+                const exists = prevList.some(item => item.id === returnedObject.id);
+                if (!exists) {
+                    const updatedList = [...prevList, returnedObject];
+                    localStorage.setItem('objectList', JSON.stringify(updatedList)); // Save updated list to localStorage
+                    return updatedList;
+                }
+                return prevList;
+            });
+
+            // Clean up the navigation state so the object isn't added again on reload
+            navigate('.', { replace: true });
+        }
+    }, [location.state, navigate]);
+
 
     function handleFormSubmit(event) {
         event.preventDefault();
@@ -15,9 +43,9 @@ export default function AddObject() {
                 date: objectDate
             };
             const updatedList = [...objectList, newObject];
-            console.log('Updated List', updatedList);
             setObjectList(updatedList);
-            setObjectValue('');
+            localStorage.setItem('objectList', JSON.stringify(updatedList)); // Save to localStorage
+            setObjectValue('');  // Clear the input fields
             setObjectDate('');
         }
     }
@@ -32,8 +60,21 @@ export default function AddObject() {
         setObjectDate(event.target.value);
     }
 
+    // Move object to the container and remove it from the list
+    function moveObject(object) {
+        // Remove from creation list and save in localStorage
+        const updatedList = objectList.filter(item => item.id !== object.id);
+        setObjectList(updatedList);
+        localStorage.setItem('objectList', JSON.stringify(updatedList)); // Save updated list to localStorage
+
+        // Navigate to Container with the object
+        navigate('/Container', { state: { object } });
+    }
+
     function deleteObject(objectId) {
-        setObjectList(objectList.filter((item) => item.id !== objectId))
+        const updatedList = objectList.filter((item) => item.id !== objectId);
+        setObjectList(updatedList);
+        localStorage.setItem('objectList', JSON.stringify(updatedList)); // Save updated list to localStorage
     }
 
     return (
@@ -60,7 +101,8 @@ export default function AddObject() {
             <ul>
                 {objectList.map((item) => (
                     <li key={item.id}>
-                        <label>{item.value} - {item.date}</label>
+                        <DraggableItem item={item} />
+                        <button onClick={() => moveObject(item)}>Move to Container</button>
                         <button onClick={() => deleteObject(item.id)}>Delete</button>
                     </li>
                 ))}

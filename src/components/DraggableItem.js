@@ -9,7 +9,7 @@ const ItemType = {
 export const DraggableItem = ({ item }) => {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: ItemType.OBJECT,
-    item: { id: item.id, name: item.name }, // Pass the item data
+    item: { id: item.id, name: item.value }, // Pass the item data
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging(),
     }),
@@ -26,7 +26,7 @@ export const DraggableItem = ({ item }) => {
         marginBottom: '5px',
       }}
     >
-      {item.name}
+      {item.value} || {item.date}
     </div>
   );
 };
