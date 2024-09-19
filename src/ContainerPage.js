@@ -4,6 +4,9 @@ import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import "./styles/SelectContainer.css";
 
+
+
+// functional component to set location and receive object from location.state
 export default function Container() {
   const location = useLocation();
   const { object } = location.state || {};  // Access the passed object
@@ -14,6 +17,7 @@ export default function Container() {
 });
   const navigate = useNavigate();
 
+  // if object is not in list already, create new object and update list
   useEffect(() => {
     if (object && !objectList.some(item => item.id === object.id)) {
         // Only add the object if it's not already in the list
@@ -39,9 +43,9 @@ function moveObject(item) {
 
   return (
     <div className="app-container full-background-white">
-      <div>
+      <div className="px-4 pt-5 text-center ">
         <h1 className="text-center mt-3">Welcome to your container</h1>
-        <ul className="main-content">
+        <ul className="">
           {objectList.map((item) => (
             <li key={item.id}>
               {item.value} - {item.date}

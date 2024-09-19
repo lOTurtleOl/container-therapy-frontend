@@ -3,16 +3,19 @@ import { v4 as uuidv4 } from 'uuid';
 import { DraggableItem } from './DraggableItem';
 import { useNavigate, useLocation } from 'react-router-dom';
 
+// Functional component
 export default function AddObject() {
-    const [objectList, setObjectList] = useState(() => {
+    const [objectList, setObjectList] = useState(() => { // set state of objectList to localStorage if exists, else empty array
         const savedList = localStorage.getItem('objectList');
         return savedList ? JSON.parse(savedList) : [];
     });
+    // Set state for value and date, set navigation and location for routing
     const [objectValue, setObjectValue] = useState('');
     const [objectDate, setObjectDate] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
 
+    // if location has an object, set variable to the object
     useEffect(() => {
         if (location.state && location.state.object) {
             const returnedObject = location.state.object;
@@ -33,7 +36,7 @@ export default function AddObject() {
         }
     }, [location.state, navigate]);
 
-
+    // if objectValue is not empty, create a new object with the info and update list
     function handleFormSubmit(event) {
         event.preventDefault();
         if (objectValue.trim()) {
@@ -50,11 +53,13 @@ export default function AddObject() {
         }
     }
 
+    // set objectValue to update with input
     function handleChange(event) {
         event.preventDefault();
         setObjectValue(event.target.value);
     }
 
+    // set date to update with input
     function handleDateChange(event) {
         event.preventDefault();
         setObjectDate(event.target.value);
@@ -71,6 +76,7 @@ export default function AddObject() {
         navigate('/Container', { state: { object } });
     }
 
+    // get id and filter it out of list. Save to local storage
     function deleteObject(objectId) {
         const updatedList = objectList.filter((item) => item.id !== objectId);
         setObjectList(updatedList);
@@ -98,6 +104,7 @@ export default function AddObject() {
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
 
+        {/* map over items in objectList and create a list item for each with a button to move and to delete */}
             <ul>
                 {objectList.map((item) => (
                     <li key={item.id}>
