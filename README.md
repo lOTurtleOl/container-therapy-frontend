@@ -1,71 +1,92 @@
-# Getting Started with Create React App
+CBT Container Therapy Front End (WIP)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the CBT Container App! This application allows users to create, retrieve, update, and delete topics and their associated subtopics, functioning as a visual representation of the container method used in Cognitive Behavioral Therapy. This is the front-end of the application, which interfaces with a RESTful API provided by the back-end service.
 
-## Available Scripts
+Table of Contents
 
-In the project directory, you can run:
+Introduction
 
-### `npm start`
+Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Setup and Installation
 
-### `npm test`
+Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Code Structure
 
-### `npm run build`
+Contributing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Introduction
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This application provides a simple and intuitive interface for managing objects of stress. It's designed to be a useful tool for containing and organizing subjects of personal struggle in an easily accessible space.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Features
 
-### `npm run eject`
+Add Topics: Create new topics with ease.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Delete Topics: Remove unwanted topics.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Data Persistence: Connects to a RESTful API to persist data.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Technologies Used
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+React
 
-## Learn More
+HTML
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+CSS
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+JavaScript
 
-### Code Splitting
+Setup and Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Clone the repository:
 
-### Analyzing the Bundle Size
+git clone https://github.com/lOTurtleOl/container-therapy-frontend.git
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Navigate to the project directory:
 
-### Making a Progressive Web App
+cd container-therapy-frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Install dependencies:
 
-### Advanced Configuration
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Start the application:
 
-### Deployment
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+**back-end is currently being debugged**
+Note: Ensure the back-end service is running to enable full functionality. You can find the back-end repository here.
 
-### `npm run build` fails to minify
+Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# cbt-container-react
+To create a new topic, enter the topic name in the input field and click "Add".
+
+To delete a topic, click the "Delete" button next to the topic.
+
+Code Structure
+
+src/components: Contains all the React components used in the app.
+
+src/App.js: Main application file managing routes and state.
+
+src/index.js: Entry point of the React application.
+
+src/styles.css: The CSS file for styling the app.
+
+Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+**Features to be added**
+
+Add SubTopics: Add subtopics to existing topics.
+ - To add a subtopic, enter the subtopic name and comment in the input fields and click "Add".
+
+Delete SubTopics: Remove specific subtopics from a topic.
+- To delete a subtopic, click the "Delete Sub topic" button next to the subtopic.
+
+For the back-end repository, refer to its dedicated README for setup instructions, API documentation, and more.
