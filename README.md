@@ -71,16 +71,40 @@ src/index.js: Entry point of the React application.
 
 src/styles.css: The CSS file for styling the app.
 
-## **Contributing**
+## **Known bugs and issues to be fixed**
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Drop down nav bar not functioning properly.
+
+Drag and drop not functional yet.
+
+Images used for containers other than folder integrated poorly.
+
+Must switch off of folder option and back for it to display properly.
+
+Container should be clickable link to container page.
+
+No way to get to container page without navbar.
+
+"Add to container" button adding the same object twice.
 
 ## **Features to be added**
+
+Add more container options to choose from.
+
+Add Drag and Drop functionality for containers.
+
+Proper integration with back end API.
 
 Add SubTopics: Add subtopics to existing topics.
  - To add a subtopic, enter the subtopic name and comment in the input fields and click "Add".
 
 Delete SubTopics: Remove specific subtopics from a topic.
 - To delete a subtopic, click the "Delete Sub topic" button next to the subtopic.
+
+## **Contributing**
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+
 
 For the back-end repository, refer to its dedicated README for setup instructions, API documentation, and more.
